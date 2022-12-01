@@ -13,7 +13,21 @@
             
     - name: "Lamp - Installing PHP packages"
       shell: amazon-linux-extras install php7.4 -y
-        
+    
+    - name: "listing PHP package in client instance"
+      package_facts:
+        manager: auto
+        strategy: all
+
+    - name: "checking for PHP package"
+      when: "'php-fpm' in ansible_facts.packages"
+      debug:
+        msg: "php is available in server"
+
+    - name: "Installing php if not available"
+      when: "'php-fpm' not in ansible_facts.packages" 
+      shell: amazon-linux-extras install php7.4 -y    
+
     - name: "Lamp - Creating httpd.conf from template"
       template:
         src: httpd.conf.tmpl
