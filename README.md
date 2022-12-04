@@ -743,7 +743,13 @@ ansible-playbook -i hosts playbook.tmpl
 
 After, the command is executed, the output will look like:
 
+![image](https://github.com/anandu79/ansible-wordpress/blob/main/output/image.png)
+![image1](https://github.com/anandu79/ansible-wordpress/blob/main/output/image%20(1).png)
+![image2](https://github.com/anandu79/ansible-wordpress/blob/main/output/image%20(2).png)
 
+Next, load the public DNS name of the remote instance in a web browser and we will receive the WordPress installation page as shown below:
+
+![image3](https://github.com/anandu79/ansible-wordpress/blob/main/output/image%20(3).png)
 
 
 
